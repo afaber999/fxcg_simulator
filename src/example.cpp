@@ -19,14 +19,12 @@ int main_(void){
     static MenuItems mmi = {4, {{21, "Aqua"}, {22, "Seagreen"}, {23, "Indigo"}, {24, "White"}}};
     MenuWidget main_menu(mmi);
 
-    ButtonWidget test_button("Test button");
+    ButtonWidget test_button("T");
 
     auto background_color = COLOR_WHITE;
     bool main_menu_active = false;
 
     while(1){
-
-
         Bdisp_Fill_VRAM(background_color, 4);
 
         test_button.render(vram, 20, 20, 140, 30);
@@ -36,19 +34,16 @@ int main_(void){
         GetKey(&key);
 
         test_button.update(key);
-
-        
-        printf("test_button_state is %d\n", test_button.get_state());
         
         switch (test_button.get_state()) {
             case ButtonState::ENABLED:
-                render_mini_text(50, 50, "ENABLED", COLOR_BLACK);
+                render_mini_text(50, 50, "E", COLOR_BLACK);
                 break;
             case ButtonState::DISABLED:
-                render_mini_text(50, 50, "DISABLED", COLOR_BLACK);
+                render_mini_text(50, 50, "D", COLOR_BLACK);
                 break;
             case ButtonState::SELECTED:
-                render_mini_text(50, 50, "SELECTED", COLOR_BLACK);
+                render_mini_text(50, 50, "S", COLOR_BLACK);
                 break;
         }
 

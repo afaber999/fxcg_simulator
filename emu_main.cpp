@@ -22,6 +22,8 @@ extern int main_();
 
 int main(int argc, char** argv)
 {
+    printf("STARTING EMU \n");
+    
     emu_init();
 
     const int w=LCD_WIDTH_PX;

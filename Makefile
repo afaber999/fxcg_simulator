@@ -1,5 +1,5 @@
 #OBJS specifies which files to compile as part of the project
-OBJS =  fxcg_emu.cpp emu_main.cpp gui_test.cpp ./src/example.cpp ./src/button.cpp ./src/menu.cpp ./src/rect.cpp
+OBJS =  emu_font_18.cpp fxcg_emu.cpp emu_main.cpp gui_test.cpp ./src/example.cpp ./src/button.cpp ./src/menu.cpp ./src/rect.cpp
 
 #CC specifies which compiler we're using
 CC = g++
