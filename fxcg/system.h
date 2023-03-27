@@ -34,9 +34,7 @@ void TakeScreenshot2(void); //seems to be the same as the one above
 void DisplayMainMenu(void);
 
 //Hold program execution:
-void OS_InnerWait_ms(int wait_ms);
-void wait(int wait_ms);
-
+void OS_InnerWait_ms(int);
 
 void CMT_Delay_100micros(int); //does CMT stand for Composable Memory Transactions? Couldn't find documentation on this
 void CMT_Delay_micros(int); //   nor on this (gbl08ma)

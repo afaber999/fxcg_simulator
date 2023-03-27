@@ -21,7 +21,7 @@ int main_() {
 
 	Bdisp_EnableColor(1);
 	Bdisp_AllClr_VRAM();
-	DrawFrame(COLOR_BG);
+	//DrawFrame(COLOR_BG);
 
 	RenderBackground();
 
@@ -31,7 +31,7 @@ int main_() {
 	game = Game();
 	bool left, up, right, down, moved = true;
 
-	SetQuitHandler(OnQuit);
+	//SetQuitHandler(OnQuit);
 
 	int k;
 	while (true) {

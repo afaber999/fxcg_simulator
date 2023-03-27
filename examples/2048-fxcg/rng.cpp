@@ -1,11 +1,14 @@
+
 #include "rng.h"
 #include <fxcg/rtc.h>
+//extern int RTC_GetTicks();
 
 uint64_t s[2];
 
 void init_xorshift128plus() {
 	// Unique device ID
-	s[0] = *(uint64_t*)0x8001FFD0;
+//	s[0] = *(uint64_t*)0x8001FFD0;
+	s[0] = 0xBABEFACE;
 	// RTC ticks
 	s[1] = RTC_GetTicks();
 }

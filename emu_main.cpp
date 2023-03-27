@@ -11,6 +11,7 @@ and may not be redistributed without written permission.*/
 #include <thread>
 #include "fxcg/display.h"
 #include "fxcg/keyboard.h"
+#include "fxcg/rtc.h"
 
 extern void* libfxcg_vram;
 extern int* libfxcg_keypressed;
@@ -23,7 +24,6 @@ extern int main_();
 int main(int argc, char** argv)
 {
     printf("STARTING EMU \n");
-    
     emu_init();
 
     const int w=LCD_WIDTH_PX;
@@ -101,3 +101,16 @@ int main(int argc, char** argv)
     return 0;
 }
 
+
+int RTC_GetTicks(void){
+    // return 1/128 ticks since midnight
+
+    auto now = clock();
+    return now * 128 / CLOCKS_PER_SEC;
+}
+
+
+// AF TODO
+void SetQuitHandler(void (*fx)()) {
+    printf("todo ");
+} // sets callback to be run when user exits through the main menu from one app to another. eActivity uses this in the "Save file?" dialog
