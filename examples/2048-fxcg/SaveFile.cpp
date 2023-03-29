@@ -2,7 +2,7 @@
 #include "tiles.h"
 
 #include <fxcg/file.h>
-#include <alloca.h>
+//#include <alloca.h>
 #include <string.h>
 
 const SaveFileVersion SaveFile::CurrentVersion = SaveFileVersion::VERSION_1_0_2;

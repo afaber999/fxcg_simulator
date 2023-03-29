@@ -1,7 +1,6 @@
 
 #include "rng.h"
 #include <fxcg/rtc.h>
-//extern int RTC_GetTicks();
 
 uint64_t s[2];
 

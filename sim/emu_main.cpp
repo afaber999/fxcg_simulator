@@ -9,17 +9,18 @@ and may not be redistributed without written permission.*/
 #include <string>
 #include <iostream>
 #include <thread>
-#include "fxcg/display.h"
-#include "fxcg/keyboard.h"
-#include "fxcg/rtc.h"
+
+// use full path since we don't want to add ../include to the general search path
+#include "include/fxcg/display.h"
+#include "include/fxcg/keyboard.h"
+#include "include/fxcg/rtc.h"
 
 extern void* libfxcg_vram;
 extern int* libfxcg_keypressed;
 
 void emu_init();
 
-extern int main_();
-
+extern int fxcg_main();
 
 int main(int argc, char** argv)
 {
@@ -40,7 +41,7 @@ int main(int argc, char** argv)
     texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGB565, SDL_TEXTUREACCESS_STREAMING, w, h);
 
     std::thread t([](){
-        main_();
+        fxcg_main();
     });
 
     std::string input;
@@ -101,16 +102,3 @@ int main(int argc, char** argv)
     return 0;
 }
 
-
-int RTC_GetTicks(void){
-    // return 1/128 ticks since midnight
-
-    auto now = clock();
-    return now * 128 / CLOCKS_PER_SEC;
-}
-
-
-// AF TODO
-void SetQuitHandler(void (*fx)()) {
-    printf("todo ");
-} // sets callback to be run when user exits through the main menu from one app to another. eActivity uses this in the "Save file?" dialog

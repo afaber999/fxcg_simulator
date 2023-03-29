@@ -16,7 +16,7 @@ void OnQuit() {
 	game.Save();
 }
 
-int main_() {
+int main() {
 	init_xorshift128plus();
 
 	Bdisp_EnableColor(1);

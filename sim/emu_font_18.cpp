@@ -1374,8 +1374,8 @@ FontBmp18 fonts_18[] = {
 size_t num_fonts_18 = sizeof(fonts_18) / sizeof(fonts_18[0]);
 
 
-int find_font_idx(char ch) {
-    for (int i=0; i< num_fonts_18; i++ ) {
+int find_font_18_idx(char ch) {
+    for (size_t i=0; i< num_fonts_18; i++ ) {
         if ( fonts_18[i].ch == ch )
             return i;
     }

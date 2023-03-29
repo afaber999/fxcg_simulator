@@ -12,7 +12,8 @@
 #include "rect.h"
 
 
-int main_(void){
+int main() {
+
     Bdisp_EnableColor(1);
     auto vram = VRAMPointer(GetVRAMAddress());
 
